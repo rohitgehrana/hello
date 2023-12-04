@@ -1,0 +1,18 @@
+import RPi.GPIO as GPIO
+import time
+
+# Set up GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(your_gpio_pin, GPIO.OUT)
+
+try:
+    # Turn the pump on
+    GPIO.output(your_gpio_pin, GPIO.HIGH)
+    time.sleep(5)  # Run the pump for 5 seconds
+    
+    # Turn the pump off
+    GPIO.output(your_gpio_pin, GPIO.LOW)
+
+finally:
+    # Clean up GPIO on exit
+    GPIO.cleanup()
